@@ -1,0 +1,115 @@
+:root {
+  --violet: #9b5cf6;
+  --bg-dark: #0a0a0f;
+  --text-light: #f0f0f0;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--bg-dark);
+  color: var(--text-light);
+  overflow-x: hidden;
+}
+
+.navbar {
+  background: rgba(10, 10, 15, 0.9);
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(155, 92, 246, 0.2);
+}
+.navbar img {
+  height: 60px;
+}
+
+.navbar-brand span {
+  color: var(--violet);
+}
+
+/* HERO */
+.hero {
+  min-height: 100vh;
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80')
+    center/cover fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding-top: 100px; /* evita superposición con navbar */
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 15, 0.85);
+  z-index: 0; /* 🔧 BAJA la capa oscura */
+}
+
+/* CORREGIDO: antes tenía position absolute y tapaba el contenido */
+.hero-content {
+  position: relative;
+  z-index: 1; /* 🔧 Ahora queda por encima del overlay */
+  width: 100%;
+}
+
+/* WHATSAPP */
+.whatsapp {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  background: #25D366;
+  color: white;
+  font-size: 1.8rem;
+  padding: 4px 12px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #25D366;
+  transition: 0.3s;
+  z-index: 1000;
+}
+
+.whatsapp:hover {
+  transform: scale(1.1);
+}
+
+footer span {
+  color: var(--violet);
+}
+
+/* CARDS SERVICES */
+.card-services {
+  background: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c?auto=format&fit=crop&w=2000&q=80')
+    center/cover fixed;
+  height: 60vh;
+  position: relative;
+  color: white;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid #494949;
+  color: var(--text-light);
+  display: flex;
+  min-height: 100%;
+  margin: 20px;
+  transition: all 0.3s ease;
+  z-index: 1;
+}
+
+.card:hover {
+  border-color: #5a3b85;
+  box-shadow: 0 0 10px var(--violet);
+  transform: scale(1.05);
+}
+
+.card img {
+  border-radius: 10px;
+}
+
+.card-title {
+  color: #0edaad;
+  font-weight: bold;
+  font-size: 2rem;
+  transition: all 0.3s ease;
+}
+
+
